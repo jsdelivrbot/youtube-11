@@ -18,6 +18,13 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./build/index.bundle.js",
+    "compile": "NODE_ENV=production webpack --config ./webpack.config.js --progress"
+  },
   devServer: {
     historyApiFallback: true,
     contentBase: './'
