@@ -23,7 +23,9 @@ module.exports = {
     "start": "webpack-dev-server --open",
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./build/index.bundle.js",
-    "compile": "NODE_ENV=production webpack --config ./webpack.config.js --progress"
+    "compile": "NODE_ENV=production webpack --config ./webpack.config.js --progress",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   devServer: {
     historyApiFallback: true,
